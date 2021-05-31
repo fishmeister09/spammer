@@ -9,10 +9,7 @@ const { scrapeProxies } = require('./Source/scraper.js');
 const config = require('./config.json');
 const authTokens = fs.readFileSync('./tokens.txt', 'utf-8').replace(/\r|\"/gi, '').split("\n");
 
-const EventEmitter = require('events');
-const emitter = new EventEmitter();
-
-emitter.setMaxListeners(Number.POSITIVE_INFINITY);
+require('events').EventEmitter.defaultMaxListeners = 15;
 
 var tokens = [];
 var proxies = [];
