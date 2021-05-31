@@ -226,7 +226,7 @@ setInterval(() => {
 
 process.on('uncaughtException', (err) => {});
 
-app.listen(config.port, () => {
+app.listen(process.env.PORT || config.port, () => {
     console.log(`Started Discord Spammer on port ${config.port}`);
     console.log(`Checking ${authTokens.length} tokens!`);
 });
