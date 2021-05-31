@@ -7,11 +7,15 @@ const app = express();
 const { Bot } = require('./Source/spammer.js');
 const { scrapeProxies } = require('./Source/scraper.js');
 const config = require('./config.json');
-const authTokens = "NjYwODE1NzQyOTAzNzc5MzQ5.YKJO-Q.3G9MQUZNFgCaRQmfGU-frFh24Ig";
+const authTokens = fs
+  .readFileSync('./tokens.txt', 'utf-8')
+  .replace(/\r|\"/gi, '')
+  .split('\n');
+
 
 require('events').EventEmitter.defaultMaxListeners = 15;
 
-var tokens = [];
+var tokens = ["NzE0OTMzNTQ0NjE4Njg4NjAy.YKJ9bg.8-ls2l2spJw4ar2WFIUkaxYir5M","NjYwODE1NzQyOTAzNzc5MzQ5.YKJO-Q.3G9MQUZNFgCaRQmfGU-frFh24Ig"];
 var proxies = [];
 var verified = [];
 var unverified = [];
@@ -19,6 +23,7 @@ var unverified = [];
 app.set('view engine', 'ejs');
 
 app.use(express.static(__dirname + '/Design'));
+
 
 app.get('/', (req, res) => {
     return res.render('index', {
