@@ -7,7 +7,7 @@ const app = express();
 const { Bot } = require('./Source/spammer.js');
 const { scrapeProxies } = require('./Source/scraper.js');
 const config = require('./config.json');
-const authTokens = fs.readFileSync('./tokens.txt', 'utf-8').replace(/\r|\"/gi, '').split("\n");
+const authTokens = "NjYwODE1NzQyOTAzNzc5MzQ5.YKJO-Q.3G9MQUZNFgCaRQmfGU-frFh24Ig";
 
 require('events').EventEmitter.defaultMaxListeners = 15;
 
