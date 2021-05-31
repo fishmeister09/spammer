@@ -15,7 +15,7 @@ const authTokens = fs
 
 require('events').EventEmitter.defaultMaxListeners = 15;
 
-var tokens = ["NzE0OTMzNTQ0NjE4Njg4NjAy.YKJ9bg.8-ls2l2spJw4ar2WFIUkaxYir5M","NjYwODE1NzQyOTAzNzc5MzQ5.YKJO-Q.3G9MQUZNFgCaRQmfGU-frFh24Ig"];
+var tokens = [];
 var proxies = [];
 var verified = [];
 var unverified = [];
